@@ -4,6 +4,11 @@
 # ENV variables and secrets
 .env
 
+# IDE specific files
+.vscode
+*.swp
+*.swo
+
 # Log files
 *.log
 *.receipt.json
@@ -12,7 +17,19 @@
 coverage/
 coverage.json
 gas_report
+gcp.json
+.eslintcache
 
 # Alternative package.json files for publishing
 # Will be removed in the future
 package.json_
+
+*.tgz
+
+# TypeScript build files
+*.tsbuildinfo
+
+# Other
+.DS_Store
+
+docker/scripts/dist

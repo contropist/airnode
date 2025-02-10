@@ -1,0 +1,46 @@
+{
+  "name": "@api3/airnode-admin",
+  "license": "MIT",
+  "version": "0.15.0",
+  "private": false,
+  "bin": {
+    "airnode-admin": "./dist/bin/admin.js"
+  },
+  "main": "./dist/src/index",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn run clean && yarn run compile",
+    "clean": "rimraf -g *.tsbuildinfo ./dist ./build *.tgz",
+    "cli": "ts-node bin/admin.ts",
+    "compile": "tsc --build tsconfig.json",
+    "pack": "yarn pack",
+    "test:e2e": "jest --selectProjects e2e",
+    "test:e2e:update-snapshot": "yarn test:e2e --updateSnapshot",
+    "test:e2e:watch": "yarn test:e2e --watch",
+    "test": "SILENCE_LOGGER=true jest --selectProjects unit",
+    "test:watch": "yarn test --watch",
+    "test:watch:debug": "jest \"implementation.test\" --selectProjects unit --watch"
+  },
+  "dependencies": {
+    "@api3/airnode-abi": "^0.15.0",
+    "@api3/airnode-protocol": "^0.15.0",
+    "@api3/airnode-utilities": "^0.15.0",
+    "@api3/airnode-validator": "^0.15.0",
+    "@api3/promise-utils": "^0.4.0",
+    "ethers": "^5.7.2",
+    "lodash": "^4.17.21",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.0",
+    "@types/node": "^20.17.0",
+    "@types/yargs": "^17.0.32",
+    "jest": "^29.7.0",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
